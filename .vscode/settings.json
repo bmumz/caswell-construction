@@ -7,7 +7,6 @@
     "editor.cursorStyle": "underline-thin",
     "editor.formatOnSave": true,
     "prettier.proseWrap": "never",
-    "html.format.wrapAttributes": "force-aligned",
     "scm.diffDecorationsGutterWidth": 5,
     "prettier.printWidth": 120,
     "scss.completion.triggerPropertyValueCompletion": false,
