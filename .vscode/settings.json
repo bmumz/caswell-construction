@@ -1,0 +1,17 @@
+{
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "underline-thin",
+    "editor.formatOnSave": true,
+    "prettier.proseWrap": "never",
+    "html.format.wrapAttributes": "force-aligned",
+    "scm.diffDecorationsGutterWidth": 5,
+    "prettier.printWidth": 120,
+    "scss.completion.triggerPropertyValueCompletion": false,
+    "editor.trimAutoWhitespace": false,
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true
+}

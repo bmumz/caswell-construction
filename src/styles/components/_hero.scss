@@ -1,0 +1,24 @@
+.hero__img--desktop {
+  height: 0;
+  visibility: hidden;
+}
+
+.hero__img--mobile {
+  visibility: visible;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .hero__img--desktop {
+    height: 100vh;
+    visibility: visible;
+  }
+  .hero__img--mobile {
+    visibility: hidden;
+    height: 0;
+  }
+}

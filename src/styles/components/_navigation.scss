@@ -1,0 +1,99 @@
+.nav__container {
+  @include flex-row(center);
+  position: relative;
+}
+
+.nav__isOpen {
+  &.open {
+    .nav__overlay {
+      width: 100vw;
+      height: 40vh;
+      min-height: 250px;
+      top: 0;
+      right: 0;
+      position: absolute;
+      background: rgb(14, 12, 12);
+      opacity: 0.65;
+      z-index: 1;
+    }
+    nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      width: 100vw;
+      height: 40vh;
+      @include flex-col(center);
+      justify-content: center;
+      a {
+        color: $less-white;
+        font-size: $s-size;
+        text-decoration: none;
+        letter-spacing: $ltr-spc;
+        text-transform: uppercase;
+        margin: $s-size;
+      }
+    }
+  }
+  &.closed {
+    nav {
+      display: none;
+    }
+  }
+}
+
+.nav__hmbrg {
+  @include flex-row(center);
+  visibility: visible;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 2rem;
+}
+.nav__btn.closed {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav__btn.open .nav__hmbrg--animation {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.nav__btn.open .nav__hmbrg--animation::before {
+  transform: rotate(45deg) translate(35px, -35px);
+  background: $less-white;
+}
+
+.nav__btn.open .nav__hmbrg--animation::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  background: $less-white;
+}
+
+.nav__hmbrg--animation {
+  padding: 0;
+  @include flex-row(center);
+  position: relative;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  @include button-animation;
+}
+
+.nav__hmbrg--animation::before,
+.nav__hmbrg--animation::after {
+  content: '';
+  position: absolute;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  @include button-animation;
+}
+
+.nav__hmbrg--animation::before {
+  transform: translateY(-10px);
+}
+
+.nav__hmbrg--animation::after {
+  transform: translateY(10px);
+}
