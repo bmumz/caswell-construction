@@ -1,0 +1,19 @@
+.services {
+  @include flex-col(center);
+}
+
+.service {
+  line-height: 1.75;
+  margin: $s-size;
+  h3 {
+    @include default-heading;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .services {
+    @include flex-row(space-evenly);
+    align-items: flex-start;
+  }
+}

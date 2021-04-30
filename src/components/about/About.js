@@ -8,7 +8,7 @@ import aboutData from '../../data/about-data';
 const About = () => {
   const title = `About Us`;
   return (
-    <div className='about'>
+    <div className='section'>
       <Layout>
         <Heading>{title}</Heading>
         <Paragraph data={aboutData} />

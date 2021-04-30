@@ -19,3 +19,15 @@
   border-radius: 5px;
   box-shadow: -1px 3px 10px 0px rgba(37, 37, 37, 0.21);
 }
+
+@mixin default-heading {
+  @include flex-row(center);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  span {
+    border-bottom: 1px solid darken($less-white, 10);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

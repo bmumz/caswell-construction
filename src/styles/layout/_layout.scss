@@ -3,6 +3,13 @@
   margin: 0 auto;
 }
 
+.section {
+  background: $almost-black;
+  color: $less-white;
+  padding: $xl-size 0;
+  height: 100%;
+}
+
 .paragraph {
   margin: 2rem 0;
   line-height: 1.75;
@@ -10,15 +17,7 @@
 }
 
 .heading {
-  @include flex-row(center);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 400;
-  span {
-    border-bottom: 1px solid darken($less-white, 10);
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
+  @include default-heading;
 }
 
 @media (min-width: $desktop-breakpoint) {
