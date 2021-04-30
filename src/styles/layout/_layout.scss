@@ -1,0 +1,28 @@
+.layout {
+  width: 85vw;
+  margin: 0 auto;
+}
+
+.paragraph {
+  margin: 2rem 0;
+  line-height: 1.75;
+  font-size: 1.25rem;
+}
+
+.heading {
+  @include flex-row(center);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  span {
+    border-bottom: 1px solid darken($less-white, 10);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .layout {
+    width: 60vw;
+  }
+}

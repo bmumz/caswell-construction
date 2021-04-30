@@ -13,12 +13,14 @@ const Hero = () => {
         alt={alt}
         className='hero__img--desktop'
         placeholder='dominantColor'
+        layout='fullWidth'
       />
       <StaticImage
         src='../../images/toolsMobile.png'
         alt={alt}
         className='hero__img--mobile'
         placeholder='dominantColor'
+        layout='fullWidth'
       />
     </>
   );
