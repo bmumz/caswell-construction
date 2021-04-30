@@ -1,0 +1,21 @@
+@mixin flex-row($justify) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+}
+
+@mixin flex-col($align) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+}
+
+@mixin button-animation {
+  outline: none;
+  border: none;
+  width: 2.2rem;
+  height: 0.35rem;
+  background: $almost-black;
+  border-radius: 5px;
+  box-shadow: -1px 3px 10px 0px rgba(37, 37, 37, 0.21);
+}

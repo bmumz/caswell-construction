@@ -1,0 +1,114 @@
+.nav__container {
+  @include flex-row(center);
+  position: relative;
+}
+
+.nav__isOpen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  // when open, overlay with menu
+  &.open {
+    transform: translateX(0) scale(1);
+    border-radius: 0;
+    opacity: 1;
+    .nav__overlay {
+      width: 100vw;
+      height: 40vh;
+      min-height: 250px;
+      background: rgb(14, 12, 12);
+      opacity: 0.8;
+    }
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 40vh;
+      @include flex-col(center);
+      justify-content: center;
+      a {
+        visibility: visible;
+        color: $less-white;
+        font-size: $s-size;
+        text-decoration: none;
+        letter-spacing: $ltr-spc;
+        text-transform: uppercase;
+        margin: $s-size;
+      }
+      a:hover {
+        color: darken($less-white, 10);
+      }
+    }
+  }
+
+  &.closed {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-40%, -40%) scale(0.5);
+    nav {
+      a {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+// hamburger animation
+.nav__hmbrg {
+  @include flex-row(center);
+  visibility: visible;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 2rem;
+}
+.nav__btn.closed {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav__btn.open .nav__hmbrg--animation {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.nav__btn.open .nav__hmbrg--animation::before {
+  transform: rotate(45deg) translate(35px, -35px);
+  background: $less-white;
+}
+
+.nav__btn.open .nav__hmbrg--animation::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  background: $less-white;
+}
+
+.nav__hmbrg--animation {
+  padding: 0;
+  @include flex-row(center);
+  position: relative;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  @include button-animation;
+}
+
+.nav__hmbrg--animation::before,
+.nav__hmbrg--animation::after {
+  content: '';
+  position: absolute;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  @include button-animation;
+}
+
+.nav__hmbrg--animation::before {
+  transform: translateY(-10px);
+}
+
+.nav__hmbrg--animation::after {
+  transform: translateY(10px);
+}
