@@ -2,14 +2,14 @@ import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 //data
-import PageData from '../../data/page-data.js';
+import SectionData from '../../data/section-data.js';
 
 const MenuItem = () => (
   <nav>
-    {PageData &&
-      PageData.map((page, index) => (
-        <AnchorLink href={page.id} key={index}>
-          <h3>{page.title}</h3>
+    {SectionData &&
+      Object.values(SectionData).map((section, index) => (
+        <AnchorLink href={section.id} key={index}>
+          <h3>{section.title}</h3>
         </AnchorLink>
       ))}
   </nav>
