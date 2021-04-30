@@ -7,9 +7,8 @@ import '../styles/app.scss';
 const Home = () => {
   return (
     <main>
-      <Nav>
-        <Hero />
-      </Nav>
+      <Nav />
+      <Hero />
       {/* // SEO component
     // Nav
     //About
@@ -18,9 +17,6 @@ const Home = () => {
     //Work
     //Contact
     //Footer */}
-      <h1>Test</h1>
-      <h2> Test</h2>
-      <h3>Test</h3>
     </main>
   );
 };

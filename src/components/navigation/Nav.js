@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MenuItem from './MenuItem';
 import NavButton from './NavButton';
 
-const Nav = ({ children }) => {
+const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const showNav = () => setIsOpen(!isOpen);
@@ -10,7 +10,6 @@ const Nav = ({ children }) => {
   return (
     <div className='nav__container'>
       <NavButton isOpen={isOpen} showNav={showNav} />
-      {children}
       <span className={`nav__isOpen ${isOpen ? 'open' : 'closed'}`}>
         <div className='nav__overlay'></div>
 
