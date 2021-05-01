@@ -7,7 +7,7 @@ const Services = () => {
   const title = 'Our Services';
 
   return (
-    <div className='section'>
+    <section id='services'>
       <Layout>
         <Heading>{title}</Heading>
         <div className='services'>
@@ -21,7 +21,7 @@ const Services = () => {
           ))}
         </div>
       </Layout>
-    </div>
+    </section>
   );
 };
 

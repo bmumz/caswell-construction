@@ -46,14 +46,14 @@ const Form = () => {
   };
 
   return (
-    <div className='contact__container'>
+    <div className='contact__container' id='contact'>
       <Heading className='heading__dark'>{title}</Heading>
       <div className='contact'>
         <div>
           <h2>{contactData.heading}</h2>
 
           {contactData.blurb.map((s, i) => (
-            <p key={i} className='contact__blurb'>
+            <p key={i} className='contact__blurb' id='work'>
               {s}
             </p>
           ))}

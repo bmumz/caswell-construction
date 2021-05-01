@@ -8,12 +8,12 @@ import aboutData from '../../data/about-data';
 const About = () => {
   const title = `About Us`;
   return (
-    <div className='section'>
+    <section id='about'>
       <Layout>
         <Heading>{title}</Heading>
         <Paragraph data={aboutData} />
       </Layout>
-    </div>
+    </section>
   );
 };
 export default About;
