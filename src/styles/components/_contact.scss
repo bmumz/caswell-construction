@@ -1,0 +1,94 @@
+.contact__container {
+  color: $almost-black;
+  padding: $xl-size 0;
+  background: $yellow;
+  h1 {
+    span {
+      margin-bottom: $l-size;
+    }
+  }
+  h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-right: $xl-size;
+    padding-top: 0;
+  }
+}
+
+.contact {
+  @include flex-col(flex-start);
+  width: 85vw;
+  margin: 0 auto;
+}
+//form
+.contact__form {
+  @include flex-col(center);
+  input,
+  textarea {
+    margin: $xs-size;
+    padding: $xs-size;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid $almost-black;
+    letter-spacing: $ltr-spc;
+    line-height: 1.5;
+  }
+
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'],
+  textarea {
+    min-width: 80vw;
+    max-width: 80vw;
+  }
+  input:not(:last-child):focus,
+  textarea:focus {
+    border: 2px solid $almost-black;
+  }
+}
+
+.contact__blurb {
+  margin: $m-size 0;
+}
+
+.contact__err {
+  margin-left: $xs-size;
+  height: $xl-size;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+
+  &.true {
+    color: #c93737;
+  }
+
+  &.false {
+    color: #5b7444;
+  }
+}
+
+.contact__btn {
+  background: transparent;
+  color: $almost-black;
+  text-transform: uppercase;
+}
+@media (min-width: 960px) {
+  .contact__container {
+    h2 {
+      padding-top: 3.5rem;
+    }
+  }
+  .contact {
+    @include flex-row(space-evenly);
+  }
+
+  .contact__form {
+    input[type='text'],
+    input[type='tel'],
+    input[type='email'],
+    textarea {
+      min-width: 500px;
+      max-width: 500px;
+    }
+  }
+}

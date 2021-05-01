@@ -17,7 +17,12 @@
 }
 
 .heading {
-  @include default-heading;
+  @include default-heading(darken($less-white, 5));
+}
+
+.heading__dark {
+  color: $almost-black;
+  @include default-heading($almost-black);
 }
 
 @media (min-width: $desktop-breakpoint) {

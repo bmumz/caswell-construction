@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Heading = ({ children }) => (
-  <h1 className='heading'>
+const Heading = ({ children, className }) => (
+  <h1 className={className || `heading`}>
     <span>{children}</span>
   </h1>
 );
