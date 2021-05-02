@@ -20,6 +20,17 @@
   box-shadow: -1px 3px 10px 0px rgba(37, 37, 37, 0.21);
 }
 
+@mixin orange-btn {
+  padding: 0.25rem $s-size;
+  background: $orangey;
+  color: $less-white;
+  border-radius: 50px;
+  box-shadow: 0 6px 12px rgba(202, 71, 43, 0.3);
+  margin: $xs-size 0;
+  font-weight: 300;
+  transition: all 0.25s ease;
+}
+
 @mixin default-heading($color) {
   @include flex-row(center);
   text-transform: uppercase;
