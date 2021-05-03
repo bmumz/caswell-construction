@@ -31,13 +31,13 @@
   transition: all 0.25s ease;
 }
 
-@mixin default-heading($color) {
+@mixin default-heading($color, $thickness) {
   @include flex-row(center);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 400;
   span {
-    border-bottom: 1px solid $color;
+    border-bottom: $thickness solid $color;
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
   }

@@ -16,12 +16,12 @@ section {
 }
 
 .heading {
-  @include default-heading(darken($less-white, 5));
+  @include default-heading(darken($less-white, 5), 1px);
 }
 
 .heading__dark {
   color: $almost-black;
-  @include default-heading($almost-black);
+  @include default-heading($almost-black, 1px);
 }
 
 @media (min-width: $desktop-breakpoint) {

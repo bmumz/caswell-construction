@@ -88,3 +88,20 @@ input[type='submit'] {
   cursor: pointer;
   text-decoration: none;
 }
+
+a {
+  color: lighten($almost-black, 10);
+}
+
+a:hover {
+  color: $almost-black;
+}
+
+input,
+select,
+textarea {
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}

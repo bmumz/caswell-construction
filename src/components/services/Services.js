@@ -13,6 +13,7 @@ const Services = () => {
         <div className='services'>
           {Object.values(serviceData).map((s, i) => (
             <div key={i} className='service'>
+              <span className='service__icon--container'>{s.icon}</span>
               <h3>
                 <span>{s.title}</span>
               </h3>
