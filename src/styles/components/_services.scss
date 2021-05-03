@@ -3,13 +3,28 @@
 }
 
 .service {
+  @include flex-col(center);
   line-height: 1.75;
   margin: $s-size;
   width: 220px;
   h3 {
-    @include default-heading(darken($less-white, 5));
-    justify-content: flex-start;
+    @include default-heading($yellow, 2px);
+    margin-bottom: $s-size;
+    text-align: center;
   }
+}
+
+.service__icon--container {
+  font-size: $m-size;
+  @include flex-row(center);
+  align-items: center;
+  background: $yellow;
+  color: $almost-black;
+  margin: $m-size 0;
+  padding: $s-size;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 200%;
 }
 
 @media (min-width: $desktop-breakpoint) {

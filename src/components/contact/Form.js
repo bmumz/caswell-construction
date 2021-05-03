@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Heading from '../ui/Heading';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 //hook
 import { useInput } from '../../hooks/use-input';
 //data
@@ -15,6 +17,7 @@ const Form = () => {
   const { value: phone, bind: bindPhone, reset: resetPhone } = useInput('');
   const { value: subject, bind: bindSubject, reset: resetSubject } = useInput('');
   const { value: message, bind: bindMessage, reset: resetMessage } = useInput('');
+  const [contactPreference, setContactPreference] = useState(contactData.fields.contactPreference);
 
   const success = `Your email has been sent! We'll be in touch shortly!`;
   const err = `There was an unfortunate error! Please email/call us directly.`;
@@ -25,6 +28,13 @@ const Form = () => {
     resetPhone();
     resetSubject();
     resetMessage();
+    setContactPreference(contactData.fields.contactPreference);
+  };
+
+  const handleSelectionChange = (event) => {
+    {
+      setContactPreference(event.target.value);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -33,15 +43,17 @@ const Form = () => {
     axios
       .post('http://localhost:8080/contact', {
         headers: { 'Content-Type': 'application/json' },
-        data: { name, email, phone, subject, message },
+        data: { name, email, phone, contactPreference, subject, message },
       })
       .then((res) => {
         if (res.data.status === 'success') {
           setStatus(success);
           resetForm();
-        } else {
-          setStatus(err);
         }
+      })
+      .catch((error) => {
+        console.log(error);
+        setStatus(err);
       });
   };
 
@@ -57,6 +69,15 @@ const Form = () => {
               {s}
             </p>
           ))}
+          <ul>
+            {contactData.contact.map((m, i) => (
+              <li key={i}>
+                {m.icon}
+                {m.path && <a href={m.path}>{m.value}</a>}
+                {!m.path && <p>{m.value}</p>}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <p className={'contact__err ' + (status === err) || (status === success && 'succ')}>
@@ -87,6 +108,20 @@ const Form = () => {
               {...bindPhone}
               required
             />
+            <select
+              aria-label={contactData.fields.contactPreference}
+              defaultValue={contactPreference}
+              onChange={handleSelectionChange}
+              required
+            >
+              <option disabled>{contactData.fields.contactPreference}</option>
+              <option id='Phone' aria-label='Phone' value='Phone'>
+                Phone
+              </option>
+              <option id='Email' aria-label='Email' value='Email'>
+                Email
+              </option>
+            </select>
             <input
               type='text'
               id={contactData.fields.subject}

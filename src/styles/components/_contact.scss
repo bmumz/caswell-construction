@@ -13,6 +13,20 @@
     margin-right: $xl-size;
     padding-top: 0;
   }
+  ul {
+    line-height: 2;
+    li {
+      @include flex-row(flex-start);
+      align-items: center;
+
+      p,
+      a {
+        width: 18vw;
+        @include flex-row(flex-start);
+        letter-spacing: 0.75px;
+      }
+    }
+  }
 }
 
 .contact {
@@ -27,8 +41,9 @@
   input[type='text'],
   input[type='tel'],
   input[type='email'],
+  select,
   textarea {
-    margin: $xs-size;
+    margin: 0.25rem;
     padding: $xs-size;
     border-radius: 3px;
     outline: none;
@@ -39,7 +54,8 @@
     max-width: 80vw;
   }
   input:not(:last-child):focus,
-  textarea:focus {
+  textarea:focus,
+  select:focus {
     border: 1px solid $almost-black;
   }
 }
@@ -68,10 +84,16 @@
   @include orange-btn;
   outline: none;
   border: none;
+  font-size: 1rem;
 }
 
 .contact__btn:hover {
   background: darken($orangey, 1);
+}
+
+.contact__icon {
+  font-size: $m-size;
+  margin-right: $m-size;
 }
 
 @media (min-width: 960px) {
@@ -88,6 +110,7 @@
     input[type='text'],
     input[type='tel'],
     input[type='email'],
+    select,
     textarea {
       min-width: 500px;
       max-width: 500px;
