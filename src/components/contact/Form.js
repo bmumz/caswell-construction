@@ -37,7 +37,7 @@ const Form = () => {
     event.preventDefault();
 
     axios
-      .post('http://localhost:8080/contact', {
+      .post('https://caswell-construction-server.herokuapp.com/contact', {
         headers: { 'Content-Type': 'application/json' },
         data: { name, email, phone, contactPreference, subject, message },
       })
