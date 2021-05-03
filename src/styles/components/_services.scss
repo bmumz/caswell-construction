@@ -5,8 +5,9 @@
 .service {
   line-height: 1.75;
   margin: $s-size;
+  width: 220px;
   h3 {
-    @include default-heading;
+    @include default-heading(darken($less-white, 5));
     justify-content: flex-start;
   }
 }

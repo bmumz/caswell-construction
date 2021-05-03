@@ -2,8 +2,7 @@
   width: 85vw;
   margin: 0 auto;
 }
-
-.section {
+section {
   background: $almost-black;
   color: $less-white;
   padding: $xl-size 0;
@@ -17,7 +16,12 @@
 }
 
 .heading {
-  @include default-heading;
+  @include default-heading(darken($less-white, 5));
+}
+
+.heading__dark {
+  color: $almost-black;
+  @include default-heading($almost-black);
 }
 
 @media (min-width: $desktop-breakpoint) {
