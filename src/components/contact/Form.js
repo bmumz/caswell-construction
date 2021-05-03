@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Heading from '../ui/Heading';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //hook
 import { useInput } from '../../hooks/use-input';
@@ -9,8 +7,6 @@ import { useInput } from '../../hooks/use-input';
 import contactData from '../../data/contact-data';
 
 const Form = () => {
-  const title = 'Contact Us';
-
   const [status, setStatus] = useState('');
   const { value: name, bind: bindName, reset: resetName } = useInput('');
   const { value: email, bind: bindEmail, reset: resetEmail } = useInput('');
@@ -58,91 +54,68 @@ const Form = () => {
   };
 
   return (
-    <div className='contact__container' id='contact'>
-      <Heading className='heading__dark'>{title}</Heading>
-      <div className='contact'>
-        <div>
-          <h2>{contactData.heading}</h2>
-
-          {contactData.blurb.map((s, i) => (
-            <p key={i} className='contact__blurb' id='work'>
-              {s}
-            </p>
-          ))}
-          <ul>
-            {contactData.contact.map((m, i) => (
-              <li key={i}>
-                {m.icon}
-                {m.path && <a href={m.path}>{m.value}</a>}
-                {!m.path && <p>{m.value}</p>}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className={'contact__err ' + (status === err) || (status === success && 'succ')}>
-            <span>{status}</span>
-          </p>
-          <form onSubmit={handleSubmit} className='contact__form'>
-            <input
-              type='text'
-              id={contactData.fields.name}
-              aria-label={contactData.fields.name}
-              placeholder={contactData.fields.name}
-              {...bindName}
-              required
-            />
-            <input
-              type='email'
-              id={contactData.fields.email}
-              aria-label={contactData.fields.email}
-              placeholder={contactData.fields.email}
-              {...bindEmail}
-              required
-            />
-            <input
-              type='tel'
-              id={contactData.fields.phone}
-              aria-label={contactData.fields.phone}
-              placeholder={contactData.fields.phone}
-              {...bindPhone}
-              required
-            />
-            <select
-              aria-label={contactData.fields.contactPreference}
-              defaultValue={contactPreference}
-              onChange={handleSelectionChange}
-              required
-            >
-              <option disabled>{contactData.fields.contactPreference}</option>
-              <option id='Phone' aria-label='Phone' value='Phone'>
-                Phone
-              </option>
-              <option id='Email' aria-label='Email' value='Email'>
-                Email
-              </option>
-            </select>
-            <input
-              type='text'
-              id={contactData.fields.subject}
-              aria-label={contactData.fields.subject}
-              placeholder={contactData.fields.subject}
-              {...bindSubject}
-              required
-            />
-            <textarea
-              type='text'
-              id={contactData.fields.message}
-              aria-label={contactData.fields.message}
-              placeholder={contactData.fields.message}
-              rows={7}
-              {...bindMessage}
-              required
-            />
-            <input type='submit' value='Submit' className='contact__btn' />
-          </form>
-        </div>
-      </div>
+    <div>
+      <p className={'contact__err ' + (status === err) || (status === success && 'succ')}>
+        <span>{status}</span>
+      </p>
+      <form onSubmit={handleSubmit} className='contact__form'>
+        <input
+          type='text'
+          id={contactData.fields.name}
+          aria-label={contactData.fields.name}
+          placeholder={contactData.fields.name}
+          {...bindName}
+          required
+        />
+        <input
+          type='email'
+          id={contactData.fields.email}
+          aria-label={contactData.fields.email}
+          placeholder={contactData.fields.email}
+          {...bindEmail}
+          required
+        />
+        <input
+          type='tel'
+          id={contactData.fields.phone}
+          aria-label={contactData.fields.phone}
+          placeholder={contactData.fields.phone}
+          {...bindPhone}
+          required
+        />
+        <select
+          aria-label={contactData.fields.contactPreference}
+          defaultValue={contactPreference}
+          onChange={handleSelectionChange}
+          required
+        >
+          <option disabled>{contactData.fields.contactPreference}</option>
+          <option id='Phone' aria-label='Phone' value='Phone'>
+            Phone
+          </option>
+          <option id='Email' aria-label='Email' value='Email'>
+            Email
+          </option>
+        </select>
+        <input
+          type='text'
+          id={contactData.fields.subject}
+          aria-label={contactData.fields.subject}
+          placeholder={contactData.fields.subject}
+          {...bindSubject}
+          required
+        />
+        <textarea
+          type='text'
+          id={contactData.fields.message}
+          aria-label={contactData.fields.message}
+          placeholder={contactData.fields.message}
+          rows={7}
+          {...bindMessage}
+          required
+        />
+        <input type='submit' value='Submit' className='contact__btn' />
+      </form>
     </div>
   );
 };

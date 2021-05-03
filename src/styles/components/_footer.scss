@@ -1,0 +1,10 @@
+footer {
+  min-height: 10vh;
+  background: lighten($almost-black, 5);
+  border-top: 1px $almost-black;
+  color: darken($less-white, 5);
+
+  div {
+    padding: $xl-size;
+  }
+}
